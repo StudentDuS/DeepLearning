@@ -1,5 +1,6 @@
 import tensorflow as tf
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-sess = tf.compat.v1.Session()
-print(sess)
+import numpy as np
+
+a = np.array([[1, 2], [3, 4], [5, 6]])
+print(a[0, :])
