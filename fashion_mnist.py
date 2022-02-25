@@ -1,6 +1,3 @@
-import os
-
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -53,32 +50,32 @@ model = keras.models.Sequential([
 ])
 """
 # 查看模型
-# model.summary()
+model.summary()
 # hidden1=model.layers[1]
 # print(hidden1.get_weights())
 
 
-# 训练前的准备工作
-# 指定损失函数和优化器,训练评估指标（准确度）
-model.compile(loss=keras.losses.sparse_categorical_crossentropy,
-              optimizer=keras.optimizers.SGD(),
-              metrics=[keras.metrics.sparse_categorical_accuracy],
-              )
-# 训练与评估
-history = model.fit(x_train, y_train, epochs=30, validation_data=(x_valid, y_valid))
-# print(history.epoch,history.history)
-# 可视化结果
-pd.DataFrame(history.history).plot(figsize=(8, 5))
-plt.grid(True)
-plt.gca().set_ylim(0, 1)
-plt.show()
-# 对模型进行评估，在测试集上看其泛化误差
-print('------------------对模型进行评估，在测试集上看其泛化误差-------------------')
-model.evaluate(x_test, y_test)
-# 使用模型进行预测
-print('------------------使用模型进行预测-------------------')
-x_new = x_test[:3]
-y_proba = model.predict(x_new)
-print(y_proba.round(2))
-# 可视化
-keras.utils.plot_model(model, to_file='net.png', show_shapes=True)
+# # 训练前的准备工作
+# # 指定损失函数和优化器,训练评估指标（准确度）
+# model.compile(loss=keras.losses.sparse_categorical_crossentropy,
+#               optimizer=keras.optimizers.SGD(),
+#               metrics=[keras.metrics.sparse_categorical_accuracy],
+#               )
+# # 训练与评估
+# history = model.fit(x_train, y_train, epochs=30, validation_data=(x_valid, y_valid))
+# # print(history.epoch,history.history)
+# # 可视化结果
+# pd.DataFrame(history.history).plot(figsize=(8, 5))
+# plt.grid(True)
+# plt.gca().set_ylim(0, 1)
+# plt.show()
+# # 对模型进行评估，在测试集上看其泛化误差
+# print('------------------对模型进行评估，在测试集上看其泛化误差-------------------')
+# model.evaluate(x_test, y_test)
+# # 使用模型进行预测
+# print('------------------使用模型进行预测-------------------')
+# x_new = x_test[:3]
+# y_proba = model.predict(x_new)
+# print(y_proba.round(2))
+# # 可视化
+# keras.utils.plot_model(model, to_file='net.png', show_shapes=True)

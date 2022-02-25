@@ -1,0 +1,16 @@
+可回收垃圾Recyclable:
+glass
+cardboard
+clothes
+metal
+paper
+plastic
+shoes
+toothBrush
+有害垃圾hazardous waste：
+battery
+healthProducts
+厨余垃圾food waste:
+biological
+其他垃圾residual waste：
+trash

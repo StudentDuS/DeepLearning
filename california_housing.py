@@ -4,8 +4,6 @@ from sklearn.preprocessing import StandardScaler
 from tensorflow import keras
 import os
 
-#gpu相关设置
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # 创建日志目录
 root_logdir = os.path.join(os.curdir, "my_logs")
 
