@@ -153,7 +153,7 @@ print("验证集图片数{}".format(validation_set_nums))
 model.fit(
     training_set,
     validation_data=validation_set,
-    epochs=50,
+    epochs=100,
     steps_per_epoch=training_set_nums // 32,
     validation_steps=validation_set_nums // 32,
     callbacks=[history]
